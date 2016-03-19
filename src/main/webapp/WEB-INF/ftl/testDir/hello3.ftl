@@ -36,6 +36,24 @@
                 });
             });
 
+            $('#demo').click(function() {
+
+                $.ajax({
+                    contentType : 'application/json',
+                    url : url,
+                    type : 'POST',
+                    data : JSON.stringify({
+                        ajaxData : {
+                            sname : $('#name').val(),
+                            sage : $('#age').val(),
+                            sheight : $('#height').val(),
+                            sweight : $('#weight').val()
+                        }}),
+                    success : function(data, st) {
+                        $('#demo2').html(data + ' ** ' + st);
+                    }
+                });
+            });
         });
     </script>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -51,5 +69,13 @@
 <p>6</p>
 <p>7</p>
 <button id="btn" type="button">testAjax</button>
+
+<input type="text" id="name" value="name"/><br/>
+<input type="text" id="age" value="age"/><br/>
+<input type="text" id="height" value="height"/><br/>
+<input type="text" id="weight" value="weight"/><br/>
+<p id="demo">save sharon info</p>
+<p id="demo2"></p>
+
 </body>
 </html>
