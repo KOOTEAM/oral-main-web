@@ -38,17 +38,24 @@
 
             $('#demo').click(function() {
 
+                var map2 = {};
+                map2.sname = $('#name').val();
+                map2.sage = $('#age').val();
+                map2.sheight = $('#height').val();
+                map2.sweight = $('#weight').val();
+
                 $.ajax({
                     contentType : 'application/json',
                     url : url,
                     type : 'POST',
-                    data : JSON.stringify({
+                    /*data : JSON.stringify({
                         ajaxData : {
                             sname : $('#name').val(),
                             sage : $('#age').val(),
                             sheight : $('#height').val(),
                             sweight : $('#weight').val()
-                        }}),
+                        }}),*/
+                    data : JSON.stringify(map2),
                     success : function(data, st) {
                         $('#demo2').html(data + ' ** ' + st);
                     }
