@@ -1,4 +1,4 @@
-package oops.oral.bean;
+package oops.oral.other;
 
 /**
  * 该类用于封装键值对

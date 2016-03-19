@@ -64,7 +64,7 @@
         </property>
         <property name="hibernateProperties">
             <value>
-                hibernate.dialect=${hibernate.dialect}
+                hibernate.dialect=${dialect}
                 hibernate.query.substitutions=true 'Y', false 'N'
                 hibernate.cache.use_second_level_cache=false
                 hibernate.cache.provider_class=org.hibernate.cache.EhCacheProvider
@@ -92,32 +92,12 @@
             <tx:method name="*" rollback-for="Exception"/>
         </tx:attributes>
     </tx:advice>
+
     <aop:config>
         <aop:pointcut id="commonPointcut" expression="execution(* oops.saturn.manager..*.*(..))"/>
         <!-- 指定在rbPointcut切入点应用txAdvice事务增强处理 -->
         <aop:advisor advice-ref="txAdvice" pointcut-ref="commonPointcut"/>
     </aop:config>
-
-    <!-- spring和MyBatis完美整合，不需要mybatis的配置映射文件 -->
-    <!--<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-        <property name="dataSource" ref="dataSource" />
-        &lt;!&ndash; 自动扫描mapping.xml文件 &ndash;&gt;
-        <property name="mapperLocations" value="classpath:mapping/*.xml"></property>
-    </bean>-->
-
-    <!-- DAO接口所在包名，Spring会自动查找其下的类 -->
-    <!--<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="oops.oral.dao" />
-        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
-    </bean>-->
-
-    <!-- (事务管理)transaction manager, use JtaTransactionManager for global tx -->
-    <!--<bean id="transactionManager"
-          class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-        <property name="dataSource" ref="dataSource" />
-    </bean>-->
-
-
 
     <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
         <property name="messageConverters">

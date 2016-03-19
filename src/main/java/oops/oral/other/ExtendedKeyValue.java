@@ -1,4 +1,4 @@
-package oops.oral.bean;
+package oops.oral.other;
 
 /**
  * 该类用于封装键值对,当键和值都相同时对象才相同
