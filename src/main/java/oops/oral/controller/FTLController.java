@@ -1,6 +1,5 @@
 package oops.oral.controller;
 
-import oops.oral.domain.User;
 import oops.oral.service.UserService;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -32,9 +31,9 @@ public class FTLController {
     @RequestMapping(value = "/show")
     public ModelAndView showFTL() {
         ModelAndView mv = new ModelAndView("testDir/hello3");
-        User user = this.userService.findById(1);
-        mv.addObject("title", "FTL title: " + user.getUsername());
-        mv.addObject("content", "FTL content" + user.getEmail());
+//        User user = this.userService.findById(1);
+        mv.addObject("title", "FTL title: " /*+ user.getUsername()*/);
+        mv.addObject("content", "FTL content" /*+ user.getEmail()*/);
         logger.info("showFTL called");
 
         return mv;
