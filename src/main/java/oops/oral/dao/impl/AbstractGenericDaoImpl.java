@@ -43,7 +43,8 @@ import java.util.*;
  *            实体主键类型
  */
 @SuppressWarnings({ "unchecked", "deprecation", "rawtypes" })
-public abstract class AbstractGenericDaoImpl<T, PK extends Serializable> implements GenericDao<T, PK> {
+public abstract class
+AbstractGenericDaoImpl<T, PK extends Serializable> implements GenericDao<T, PK> {
 	public final Logger logger = LoggerFactory.getLogger(getClass());
 	protected HibernateTemplate hibernateTemplate; // hibernate数据为操作模板
 	protected SessionFactory sessionFactory; // hibernate会话工厂

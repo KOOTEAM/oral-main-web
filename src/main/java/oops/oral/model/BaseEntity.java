@@ -1,8 +1,7 @@
 package oops.oral.model;
 
 import javax.persistence.*;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.Date;
 
 /**
  * 实体基类
@@ -10,27 +9,39 @@ import java.util.Map;
  */
 @MappedSuperclass
 public class BaseEntity {
-	protected Long id; // 数据库编号
-	protected Map<String,Object> cp=new HashMap<String,Object>() ; // 自定义属性容器
+	protected Long id;
+    protected Date addTime;
+    protected Date updateTime;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     public Long getId() {
         return id;
     }
+
 	public void setId(Long id) {
 		this.id = id;
 	}
-    @Transient
-    public Map<String, Object> getCp() {
-        return cp;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    public Date getAddTime()
+    {
+        return addTime;
     }
 
-    public void setCp(Map<String, Object> cp) {
-	if(cp==null)
-	    return;
-        this.cp = cp;
+    public void setAddTime(Date addTime)
+    {
+        this.addTime = addTime;
     }
 
-    
+    @Temporal(TemporalType.TIMESTAMP)
+    public Date getUpdateTime()
+    {
+        return updateTime;
+    }
+
+    public void setUpdateTime(Date updateTime)
+    {
+        this.updateTime = updateTime;
+    }
 }
