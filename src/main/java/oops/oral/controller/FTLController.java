@@ -1,6 +1,7 @@
 package oops.oral.controller;
 
-import oops.oral.service.UserService;
+
+import oops.oral.service.TestManager;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Controller;
@@ -20,19 +21,26 @@ import java.util.Map;
 public class FTLController {
     private static final Log logger = LogFactory.getLog(FTLController.class);
 
-    private UserService userService;
+//    private UserService userService;
+    private TestManager testManager;
 
     @Resource
-    public void setUserService(UserService userService)
+    public void setTestManager(TestManager testManager)
     {
-        this.userService = userService;
+        this.testManager = testManager;
     }
+
+    //    @Resource
+//    public void setUserService(UserService userService)
+//    {
+//        this.userService = userService;
+//    }
 
     @RequestMapping(value = "/show")
     public ModelAndView showFTL() {
         ModelAndView mv = new ModelAndView("testDir/hello3");
 //        User user = this.userService.findById(1);
-        mv.addObject("title", "FTL title: " /*+ user.getUsername()*/);
+        mv.addObject("title", "FTL title: " /*+user.getUsername()*/);
         mv.addObject("content", "FTL content" /*+ user.getEmail()*/);
         logger.info("showFTL called");
 
@@ -44,6 +52,7 @@ public class FTLController {
     public Map<String,Object> showJson(@RequestBody Map<String, Object> pmap){
 //        logger.info(" validata user : {}",userName);
         Map<String,Object> map = new HashMap<String,Object>();
+        testManager.saveSharon(pmap);
         map.put("code", true);
         return map;
     }

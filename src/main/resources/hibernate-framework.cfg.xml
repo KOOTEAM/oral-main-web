@@ -1,0 +1,18 @@
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+	<session-factory>
+		
+		<!--<mapping class="oops.oral.model.Sharon" />-->
+		<mapping class="oops.oral.model.CaseReport" />
+		<mapping class="oops.oral.model.Doctor" />
+		<mapping class="oops.oral.model.Group" />
+		<mapping class="oops.oral.model.Model" />
+		<mapping class="oops.oral.model.Patient" />
+		<!--<mapping class="oops.oral.model.Record" />-->
+		<mapping class="oops.oral.model.Resource" />
+		<mapping class="oops.oral.model.User" />
+	</session-factory>
+</hibernate-configuration>
