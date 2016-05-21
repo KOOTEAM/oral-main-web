@@ -43,25 +43,116 @@ PatientMgr.prototype.init = function(container, params) {
                     ),
                     $('<tbody/>').appendAll(
                         $('<tr/>').appendAll(
-
+                            $('<td/>').html("1."),
+                            $('<td/>').html("John"),
+                            $('<td/>').html("Smith"),
+                            $('<td/>').html("@js"),
+                            $('<td/>').html("js@example.com"),
+                            $('<td/>').appendAll(
+                                $('<a/>').addClass("templatemo-edit-btn").attr("href", "").html("Edit")
+                            ),
+                            $('<td/>').appendAll(
+                                $('<a/>').addClass("templatemo-link").attr("href", "").html("Action")
+                            ),
+                            $('<td/>').appendAll(
+                                $('<a/>').addClass("templatemo-link").attr("href", "").html("Delete")
+                            )
                         ),
                         $('<tr/>').appendAll(
-
+                            $('<td/>').html("1."),
+                            $('<td/>').html("John"),
+                            $('<td/>').html("Smith"),
+                            $('<td/>').html("@js"),
+                            $('<td/>').html("js@example.com"),
+                            $('<td/>').appendAll(
+                                $('<a/>').addClass("templatemo-edit-btn").attr("href", "").html("Edit")
+                            ),
+                            $('<td/>').appendAll(
+                                $('<a/>').addClass("templatemo-link").attr("href", "").html("Action")
+                            ),
+                            $('<td/>').appendAll(
+                                $('<a/>').addClass("templatemo-link").attr("href", "").html("Delete")
+                            )
                         ),
                         $('<tr/>').appendAll(
-
+                            $('<td/>').html("1."),
+                            $('<td/>').html("John"),
+                            $('<td/>').html("Smith"),
+                            $('<td/>').html("@js"),
+                            $('<td/>').html("js@example.com"),
+                            $('<td/>').appendAll(
+                                $('<a/>').addClass("templatemo-edit-btn").attr("href", "").html("Edit")
+                            ),
+                            $('<td/>').appendAll(
+                                $('<a/>').addClass("templatemo-link").attr("href", "").html("Action")
+                            ),
+                            $('<td/>').appendAll(
+                                $('<a/>').addClass("templatemo-link").attr("href", "").html("Delete")
+                            )
                         ),
                         $('<tr/>').appendAll(
-
+                            $('<td/>').html("1."),
+                            $('<td/>').html("John"),
+                            $('<td/>').html("Smith"),
+                            $('<td/>').html("@js"),
+                            $('<td/>').html("js@example.com"),
+                            $('<td/>').appendAll(
+                                $('<a/>').addClass("templatemo-edit-btn").attr("href", "").html("Edit")
+                            ),
+                            $('<td/>').appendAll(
+                                $('<a/>').addClass("templatemo-link").attr("href", "").html("Action")
+                            ),
+                            $('<td/>').appendAll(
+                                $('<a/>').addClass("templatemo-link").attr("href", "").html("Delete")
+                            )
                         ),
                         $('<tr/>').appendAll(
-
+                            $('<td/>').html("1."),
+                            $('<td/>').html("John"),
+                            $('<td/>').html("Smith"),
+                            $('<td/>').html("@js"),
+                            $('<td/>').html("js@example.com"),
+                            $('<td/>').appendAll(
+                                $('<a/>').addClass("templatemo-edit-btn").attr("href", "").html("Edit")
+                            ),
+                            $('<td/>').appendAll(
+                                $('<a/>').addClass("templatemo-link").attr("href", "").html("Action")
+                            ),
+                            $('<td/>').appendAll(
+                                $('<a/>').addClass("templatemo-link").attr("href", "").html("Delete")
+                            )
                         ),
                         $('<tr/>').appendAll(
-
+                            $('<td/>').html("1."),
+                            $('<td/>').html("John"),
+                            $('<td/>').html("Smith"),
+                            $('<td/>').html("@js"),
+                            $('<td/>').html("js@example.com"),
+                            $('<td/>').appendAll(
+                                $('<a/>').addClass("templatemo-edit-btn").attr("href", "").html("Edit")
+                            ),
+                            $('<td/>').appendAll(
+                                $('<a/>').addClass("templatemo-link").attr("href", "").html("Action")
+                            ),
+                            $('<td/>').appendAll(
+                                $('<a/>').addClass("templatemo-link").attr("href", "").html("Delete")
+                            )
                         ),
                         $('<tr/>').appendAll(
-
+                            $('<td/>').html("1."),
+                            $('<td/>').html("John"),
+                            $('<td/>').html("Smith"),
+                            $('<td/>').html("@js"),
+                            $('<td/>').html("js@example.com"),
+                            $('<td/>').appendAll(
+                                $('<a/>').addClass("templatemo-edit-btn").attr("href", "").html("Edit")
+                            ),
+                            $('<td/>').appendAll(
+                                $('<a/>').addClass("templatemo-link").attr("href", "").html("Action")
+                            ),
+                            $('<td/>').appendAll(
+                                $('<a/>').addClass("templatemo-link").attr("href", "").html("Delete")
+                            )
                         )
                     )
                 )

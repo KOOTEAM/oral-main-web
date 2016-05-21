@@ -13,22 +13,33 @@
     <![endif]-->
     <script type="text/javascript" src="<@spring.url'/js/module/dashboard.js'/>"></script>
     <script type="text/javascript" src="<@spring.url'/js/module/patientMgr.js'/>"></script>
+    <script type="text/javascript" src="<@spring.url'/js/module/filesMgr.js'/>"></script>
+    <script type="text/javascript" src="<@spring.url'/js/module/modelMgr.js'/>"></script>
     <script type="text/javascript">
+        var selectedNode;
+
         $(function() {
+            selectedNode = $('#dashboard')[0];
             var dashboard = new Dashboard();
             var patientMgr = new PatientMgr();
+            var filesMgr = new FilesMgr();
+            var modelMgr = new ModelMgr();
 
             var param = {};
             $('#dashboard').click();
 
             $('#dashboard').click(function() {
-                setActive(this);
-                dashboard.init("container", param);
+                if (this != selectedNode) {
+                    setActive(this);
+                    dashboard.init("container", param);
+                }
             });
 
             $('#patientMgr').click(function() {
-                setActive(this);
-                patientMgr.init("container", param);
+                if (this != selectedNode) {
+                    setActive(this);
+                    patientMgr.init("container", param);
+                }
             });
 
             $('#groupMgr').click(function() {
@@ -36,21 +47,27 @@
             });
 
             $('#filesMgr').click(function() {
-
+                if (this != selectedNode) {
+                    setActive(this);
+                    filesMgr.init("container", param);
+                }
             });
 
             $('#modelMgr').click(function() {
-
-            });
-
-            $('#logout').click(function() {
-
+                if (this != selectedNode) {
+                    setActive(this);
+                    modelMgr.init("container", param);
+                }
             });
         });
 
         function setActive(tag) {
             $('nav#leftNav ul li a').removeClass("active");
             $(tag).addClass("active");
+            selectedNode = tag;
+            if ($('div.mobile-menu-icon:hidden')) {
+                $('nav#leftNav').css({display: "none"});
+            }
         }
     </script>
 
@@ -61,7 +78,7 @@
     <div class="templatemo-sidebar">
         <header class="templatemo-site-header">
             <div class="square"></div>
-            <h1>Visual Admin</h1>
+            <h1>模型平台</h1>
         </header>
         <#--<div class="profile-photo-container">
             <img src="images/profile-photo.jpg" alt="Profile Photo" class="img-responsive">
@@ -84,7 +101,7 @@
                 <li><a id="groupMgr"><i class="fa fa-hospital-o fa-fw"></i>科室管理</a></li>
                 <li><a id="filesMgr"><i class="fa fa-bar-chart fa-fw"></i>文件管理</a></li>
                 <li><a id="modelMgr"><i class="fa fa-database fa-fw"></i>模型管理</a></li>
-                <li><a id="logout"><i class="fa fa-eject fa-fw"></i>登出</a></li>
+                <li><a id="logout" href="<@spring.url'/login'/>"><i class="fa fa-eject fa-fw"></i>登出</a></li>
             </ul>
         </nav>
     </div>
